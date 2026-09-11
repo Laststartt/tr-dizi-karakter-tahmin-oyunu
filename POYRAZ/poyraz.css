@@ -1,0 +1,208 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000000;
+    margin: 0;
+    padding: 20px;
+    
+    /* Arka plan resmi */
+    background-image: url("../images/arkaplan.png");
+    
+    /* Resmi ekran boyutuna göre ölçeklendir */
+    background-size: contain;
+    
+    /* Resmi sayfanın ortasına hizala */
+    background-position: center center;
+    
+    /* Resmin tekrar etmesini engelle */
+    background-repeat: no-repeat;
+    
+    /* Sayfa kaydırıldığında arka planın sabit kalmasını sağla */
+    background-attachment: fixed;
+  }
+  
+  
+  h1 {
+    color: #ffffff;
+  
+  }
+  
+  input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #00000026;
+    color: white;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  #sonuc {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  #sonucTablosu {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  #sonucTablosu th, #sonucTablosu td {
+    border: 2px solid #ccc;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    width: 14%;
+  }
+  
+  #sonucTablosu th {
+    background-color: #ffffff26;
+    color: white;
+    padding: 15px;
+  }
+  
+  .yesil {
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .kirmizi {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  #oyuncuSecim {
+    left: 328px;
+    width: 20%; /* Input alanıyla uyumlu olmasını sağlıyoruz */
+    max-height: 500px; /* Maksimum yükseklik */
+    overflow-y: auto;
+    border-radius: 5px;
+    background-color: #ffffff26;
+    position: absolute;
+    display: none; /* Başlangıçta gizli */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .oyuncuOption {
+    display: flex;
+    align-items: center; /* Dikeyde ortalamak için */
+    padding: 5px;
+    margin: 5px 0;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  
+  }
+  
+  .oyuncuOption:hover {
+    background-color: #e2e2e2;
+  }
+  
+  /* Animasyonlu Satır Ekleme */
+  @keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+  
+  .tahminSatiri {
+    opacity: 0;  /* Başlangıçta görünmez */
+    animation: slideIn 0.5s forwards;  /* Animasyonu uygula */
+  }
+  
+  .tahminSatiri:nth-child(1) {
+    animation-delay: 0s; /* İlk kutucuk hemen gelir */
+  }
+  
+  .tahminSatiri:nth-child(2) {
+    animation-delay: 0.2s; /* 2. kutucuk biraz gecikmeli gelir */
+  }
+  
+  .tahminSatiri:nth-child(3) {
+    animation-delay: 0.4s; /* 3. kutucuk biraz daha gecikmeli gelir */
+  }
+  
+  .tahminSatiri:nth-child(4) {
+    animation-delay: 0.6s; /* 4. kutucuk daha gecikmeli gelir */
+  }
+  
+  .tahminSatiri:nth-child(5) {
+    animation-delay: 0.8s; /* 5. kutucuk en son gelir */
+  }
+  
+  #dogruTahminButton {
+    display: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    position: relative; /* absolute yerine relative kullan */
+    left: auto;
+    transform: none;
+  }
+  
+  
+  .oyuncuResim {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Resmin alanı doldurmasını sağlar */
+    margin-right: 50px; /* Resim ile oyuncu adı arasında boşluk bırakır */
+    border-radius: 50px; /* Köşeleri yuvarlatır, isteğe bağlı */
+  }
+  
+  @media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Kutuları dikey hizala */
+        gap: 20px; /* Kutular arasındaki boşluğu azalt */
+    }
+
+    .button-item {
+        width: 90%; /* Kutuların genişliğini ekran genişliğine göre ayarla */
+        max-width: none; /* Maksimum genişlik sınırını kaldır */
+        padding: 12px; /* İç boşluğu azalt */
+    }
+
+    .button-icon {
+        width: 80px; /* Resim genişliğini küçült */
+        height: 80px; /* Resim yüksekliğini küçült */
+    }
+
+    button {
+        font-size: 18px; /* Yazı boyutunu küçült */
+        height: 60px; /* Buton yüksekliğini küçült */
+    }
+}
+
+  
+  

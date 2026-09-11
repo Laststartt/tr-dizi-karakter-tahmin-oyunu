@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000000;
+    margin: 0;
+    padding: 20px;
+    background-image: url("images/arkaplan.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+#message {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex; /* Kutuları yan yana hizala */
+    flex-wrap: wrap; /* Ekran daraldığında alt satıra geçmelerine izin ver */
+    justify-content: center; /* Kutuları yatayda ortala */
+    gap: 30px; /* Kutular arasındaki boşluk biraz daha artırıldı */
+    margin: 40px auto; /* Üst ve alt boşluk artırıldı */
+    width: 100%;
+    max-width: 1200px; /* Konteyner genişliği artırıldı */
+}
+
+.button-item {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Resim ve buton arasındaki boşluk artırıldı */
+    width: 50%; /* Kutuların genişliği artırıldı */
+    max-width: 300px; /* Maksimum genişlik artırıldı */
+    padding: 16px; /* Kutunun iç boşluğu artırıldı */
+    background-color: #1c1c1c;
+    border-radius: 15px; /* Köşeler daha yuvarlatıldı */
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 15px #ffd700; /* Parlama efekti artırıldı */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-item:hover {
+    background-color: #ffd700;
+    transform: scale(1.05); /* Hover durumunda büyüme efekti artırıldı */
+}
+
+.button-icon {
+    width: 100px; /* Resim genişliği artırıldı */
+    height: 100px; /* Resim yüksekliği artırıldı */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffd700;
+    box-shadow: 0 0 12px #ffd700; /* Parlama efekti artırıldı */
+    box-sizing: border-box;
+}
+
+button {
+    flex-grow: 1;
+    padding: 10px 20px; /* Buton iç boşluğu artırıldı */
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Köşeler daha yuvarlatıldı */
+    cursor: pointer;
+    font-size: 24px; /* Yazı boyutu artırıldı */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Arial Black', sans-serif;
+    text-align: left;
+    height: 80px; /* Buton yüksekliği artırıldı */
+    width: 100%;
+    box-shadow: none;
+}
+
+button:hover {
+    background-color: transparent;
+    color: #1c1c1c;
+}
+
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Kutuları dikey hizala */
+        gap: 20px; /* Kutular arasındaki boşluğu azalt */
+    }
+
+    .button-item {
+        width: 90%; /* Kutuların genişliğini ekran genişliğine göre ayarla */
+        max-width: none; /* Maksimum genişlik sınırını kaldır */
+        padding: 12px; /* İç boşluğu azalt */
+    }
+
+    .button-icon {
+        width: 80px; /* Resim genişliğini küçült */
+        height: 80px; /* Resim yüksekliğini küçült */
+    }
+
+    button {
+        font-size: 18px; /* Yazı boyutunu küçült */
+        height: 60px; /* Buton yüksekliğini küçült */
+    }
+}

@@ -1,0 +1,265 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #000000;
+  margin: 0;
+  padding: 20px;
+  background-image: url("../images/arkaplan.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+#message {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+#charImage {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  filter: blur(15px); /* Başlangıçta bulanık */
+}
+
+input[type="text"] {
+  width: 60%; /* Genişlik tekrar %60 yapıldı */
+  padding: 12px;
+  font-size: 18px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff33;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#sonuc {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#sonucTablosu {
+  width: 60%; /* Tablo genişliği replik.css'den alındı */
+  margin: 15px auto; /* Üst ve alt boşluk replik.css'den alındı */
+  border-collapse: collapse;
+}
+#sonucTablosu th, #sonucTablosu td {
+  font-size: 16px; /* Yazı boyutu replik.css'den alındı */
+  padding: 10px; /* Hücre içi boşluk replik.css'den alındı */
+  border: 2px solid #ccc;
+  text-align: center;
+  font-weight: bold;
+  width: 14%;
+  vertical-align: middle; /* Yazıyı dikey olarak ortala */
+}
+
+#sonucTablosu th {
+  background-color: #ffffff33;
+  color: white;
+  padding: 20px; /* Daha büyük hücre içi boşluk */
+}
+
+#sonucTablosu .cevapResim {
+  width: 120px; /* Resim genişliği replik.css'den alındı */
+  height: 120px; /* Resim yüksekliği replik.css'den alındı */
+  object-fit: cover; /* Resmi kutuya sığdır */
+  border-radius: 8px; /* Daha büyük köşe yuvarlatma */
+  margin-bottom: 10px; /* Resim ile yazı arasında boşluk */
+}
+
+#sonucTablosu .cevapKutusu {
+  display: flex;
+  flex-direction: column; /* Resim ve yazıyı dikey hizala */
+  align-items: center; /* Yatay olarak ortala */
+  justify-content: center; /* Dikey olarak ortala */
+  text-align: center; /* Yazıyı ortala */
+  gap: 10px; /* Resim ve yazı arasındaki boşluk */
+}
+
+.cevapKutusu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.cevapResim {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.yesil {
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.kirmizi {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#oyuncuSecim {
+  left: 328px;
+  width: 20%; /* Input alanıyla uyumlu olmasını sağlıyoruz */
+  max-height: 500px; /* Maksimum yükseklik */
+  overflow-y: auto;
+  border-radius: 5px;
+  background-color: #ffffff26;
+  position: absolute;
+  display: none; /* Başlangıçta gizli */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.oyuncuOption {
+  display: flex;
+  align-items: center; /* Dikeyde ortalamak için */
+  padding: 5px;
+  margin: 5px 0;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.oyuncuOption:hover {
+  background-color: #e2e2e2;
+}
+
+.oyuncuResim {
+  width: 80px;
+  height: 80px;
+  object-fit: cover; /* Resmin alanı doldurmasını sağlar */
+  margin-right: 50px; /* Resim ile oyuncu adı arasında boşluk bırakır */
+  border-radius: 50px; /* Köşeleri yuvarlatır, isteğe bağlı */
+}
+
+.öneri {
+  display: flex;
+  align-items: center;
+  background-color: #444;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.öneri-resim {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.tahmin-ögesi {
+  display: flex;
+  align-items: center;
+  background-color: #555;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.tahmin-resim {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.bulanık-container {
+  margin: 20px auto;
+  text-align: center;
+}
+
+#bulanıkResmi {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  filter: blur(15px);
+}
+
+#tahminInput {
+  width: 60%;
+  padding: 12px;
+  font-size: 18px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff33;
+  color: white;
+}
+
+#tahminButonu, #yeniSayfaButonu {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#tahminButonu:hover, #yeniSayfaButonu:hover {
+  background-color: #218838;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Input ve buton arasındaki boşluk */
+}
+
+@media (max-width: 768px) {
+  .button-container {
+      flex-direction: column; /* Kutuları dikey hizala */
+      gap: 20px; /* Kutular arasındaki boşluğu azalt */
+  }
+
+  .button-item {
+      width: 90%; /* Kutuların genişliğini ekran genişliğine göre ayarla */
+      max-width: none; /* Maksimum genişlik sınırını kaldır */
+      padding: 12px; /* İç boşluğu azalt */
+  }
+
+  .button-icon {
+      width: 80px; /* Resim genişliğini küçült */
+      height: 80px; /* Resim yüksekliğini küçült */
+  }
+
+  button {
+      font-size: 18px; /* Yazı boyutunu küçült */
+      height: 60px; /* Buton yüksekliğini küçült */
+  }
+}
+

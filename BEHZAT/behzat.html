@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Türk Dizi Tahmin Oyunu</title>
+    <link rel="stylesheet" href="behzat.css">
+    <link rel="shortcut icon" href="../images/icon/icon.jpg" type="">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7687350853311602"
+    crossorigin="anonymous">
+   </script>
+</head>
+<body>
+    <!-- Sol üst köşeye buton eklendi -->
+    <button onclick="window.location.href='../index.html'" style="position: absolute; top: 10px; left: 10px; border-radius: 10%; width: 80px; height: 80px; padding: 0;">
+        <img src="../images/icon/ok.jpg" alt="Geri" style="width: 100%; height: 100%; border-radius: 15px;">
+    </button>
+    <!-- Yeni butonlar eklendi -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <button onclick="window.location.href='behzat.html'" style="border-radius: 50%; width: 80px; height: 80px; padding: 0;">
+            <img src="../images/icon/soru.jpg" alt="Sayfa 1" style="width: 100%; height: 100%; border-radius: 50%;">
+        </button>
+        <button onclick="window.location.href='replik.html'" style="border-radius: 50%; width: 80px; height: 80px; padding: 0;">
+            <img src="../images/icon/tırnak.jpg" alt="Sayfa 2" style="width: 100%; height: 100%; border-radius: 50%;">
+        </button>
+        <button onclick="window.location.href='yuz.html'" style="border-radius: 50%; width: 80px; height: 80px; padding: 0;">
+            <img src="../images/icon/yuz.jpg" alt="Sayfa 3" style="width: 100%; height: 100%; border-radius: 50%;">
+        </button>
+        <button onclick="window.location.href='bulanık.html'" style="border-radius: 50%; width: 80px; height: 80px; padding: 0;">
+            <img src="../images/icon/resim.jpg" alt="Sayfa 4" style="width: 100%; height: 100%; border-radius: 50%;">
+        </button>
+    </div>
+    <h1>Türk Dizi Tahmin Oyunu</h1>
+    <input type="text" id="tahminInput" placeholder="Bir isim girin...">
+    
+    <!-- Section kısmı, yazdıkça oyuncu isimlerinin görüneceği yer -->
+    <section id="oyuncuSecim"></section>
+    
+    <button id="tahminButonu" onclick="tahminiKontrolEt()">Tahmin Et</button>
+
+    <!-- Yeni buton başlangıçta gizli olacak -->
+    <button id="dogruTahminButton" style="display: none;" onclick="window.location.href='replik.html'">Sonraki Bölüm</button>
+    
+    <p id="sonuc"></p>
+    
+    <table id="sonucTablosu">
+        <thead>
+            <tr>
+                <th>Karakter</th>
+                <th>Cinsiyet</th>
+                <th>Meslek</th>
+                <th>Platform</th>
+                <th>Durumu</th>
+                <th>Yaş</th> <!-- Başlık değiştirildi -->
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    
+    <script src="behzat.js"></script>
+</body>
+</html>

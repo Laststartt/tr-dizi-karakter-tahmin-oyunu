@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #000000;
+    margin: 0;
+    padding: 20px;
+    background-image: url("../images/arkaplan.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+input[type="text"] {
+    width: 50%; /* Genişlik styles.css'den alındı */
+    padding: 8px; /* İç boşluk styles.css'den alındı */
+    font-size: 16px; /* Yazı boyutu styles.css'den alındı */
+    margin: 12px 0; /* Üst ve alt boşluk styles.css'den alındı */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff26;
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#sonuc {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#sonucTablosu {
+    width: 50%; /* Tablo genişliği daha fazla küçültüldü */
+    margin: 10px auto; /* Üst ve alt boşluk azaltıldı */
+    border-collapse: collapse;
+}
+
+#sonucTablosu th, #sonucTablosu td {
+    font-size: 14px; /* Yazı boyutu küçültüldü */
+    padding: 8px; /* Hücre içi boşluk azaltıldı */
+    border: 2px solid #ccc;
+    text-align: center;
+    font-weight: bold;
+    width: 14%;
+    vertical-align: middle; /* Yazıyı dikey olarak ortala */
+}
+
+#sonucTablosu th {
+    background-color: #ffffff26;
+    color: white;
+    padding: 15px;
+}
+
+#sonucTablosu .cevapResim {
+    width: 100px; /* Resim genişliği küçültüldü */
+    height: 100px; /* Resim yüksekliği küçültüldü */
+    object-fit: cover; /* Resmi kutuya sığdır */
+    border-radius: 5px; /* Hafif yuvarlatılmış köşeler */
+    margin-bottom: 5px; /* Resim ile yazı arasında boşluk */
+}
+
+#sonucTablosu .cevapKutusu {
+    display: flex;
+    flex-direction: column; /* Resim ve yazıyı dikey hizala */
+    align-items: center; /* Yatay olarak ortala */
+    justify-content: center; /* Dikey olarak ortala */
+    text-align: center; /* Yazıyı ortala */
+    gap: 5px; /* Resim ve yazı arasındaki boşluk */
+}
+
+.yesil {
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.kirmizi {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+#oyuncuSecim {
+    left: 328px;
+    width: 20%; /* Input alanıyla uyumlu olmasını sağlıyoruz */
+    max-height: 500px; /* Maksimum yükseklik */
+    overflow-y: auto;
+    border-radius: 5px;
+    background-color: #ffffff26;
+    position: absolute;
+    display: none; /* Başlangıçta gizli */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.oyuncuOption {
+    display: flex;
+    align-items: center; /* Dikeyde ortalamak için */
+    padding: 5px;
+    margin: 5px 0;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+
+}
+
+.oyuncuOption:hover {
+    background-color: #e2e2e2;
+}
+
+.oyuncuResim {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Resmin alanı doldurmasını sağlar */
+    margin-right: 50px; /* Resim ile oyuncu adı arasında boşluk bırakır */
+    border-radius: 50px; /* Köşeleri yuvarlatır, isteğe bağlı */
+  }
+
+  
+
+#replikBox {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+#rastgeleReplik {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#yeniSayfaButonu {
+    display: none; /* Başlangıçta gizli */
+    margin: 20px auto; /* Üst ve alt boşluk, ortalamak için otomatik yan boşluk */
+    display: block; /* Blok olarak göster */
+    text-align: center; /* Metni ortala */
+    padding: 10px 20px; /* İç boşluk */
+    font-size: 16px; /* Yazı boyutu */
+    border: none; /* Kenarlık kaldır */
+    border-radius: 5px; /* Köşeleri yuvarla */
+    cursor: pointer; /* İmleç değişimi */
+}
+
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Kutuları dikey hizala */
+        gap: 20px; /* Kutular arasındaki boşluğu azalt */
+    }
+
+    .button-item {
+        width: 90%; /* Kutuların genişliğini ekran genişliğine göre ayarla */
+        max-width: none; /* Maksimum genişlik sınırını kaldır */
+        padding: 12px; /* İç boşluğu azalt */
+    }
+
+    .button-icon {
+        width: 80px; /* Resim genişliğini küçült */
+        height: 80px; /* Resim yüksekliğini küçült */
+    }
+
+    button {
+        font-size: 18px; /* Yazı boyutunu küçült */
+        height: 60px; /* Buton yüksekliğini küçült */
+    }
+}
